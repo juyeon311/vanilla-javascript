@@ -17,9 +17,25 @@ function onLoginSubmit(event) {
     event.preventDefault(); /* 기본동작을 막고 */
     loginForm.classList.add(HIDDEN_CLASSNAME); /*id login-form이 있는 곳에 class hidden을 추가하고(그러면 form이 없어짐)*/
     const username = loginInput.value; /*username을 loginInput의 vlaue라고 지정하고*/
+    localStorage.setItem("username", username) /*"username"은 저장될 아이템의 이름, 값은 username 변수이다. */
     greeting.innerText = `Hello ${username}`; /*id greeting이 있는 h1에 hello하고 username을 넣어준다*/ /* = "Hello(string) "+ username(변수명);*/
     greeting.classList.remove(HIDDEN_CLASSNAME); /*h1에 있었던 class hidden을 없애서 h1을 보여준다*/
 }
+
+/*우리가 브라우저에 공짜로 뭔가를 기억할 수 있게 해주는 기능이 존재함. 
+그 API이름은 local storage임
+local storage는 우리가 브라우저이 뭔가를 저장할 수 있게 해준다. 
+그래서 그거를 나중에 가져다 쓸 수 있다.*/
+/*local storage API를 살펴보면 다양한 method들을 볼 수 있는데 
+그 중 하나는 setItem 이다. 
+setItem을 활용하면 local storage에 정보를 저장할 수 있다.
+저장하는 방법 : localStorage.setItem("저장할 값의 이름(key)","저장할 값(value)") 
+저장한 값 불러오는 방법 : localStorage.getItem("username")
+저장한 값 삭제하는 방법 : localStorage.removeItem("username")*/
+/*이제 할 일은 유저가 이름을 제출할 때 그걸 저장해주는 것. */
+/*그런데 아직도 새로고침을 하면 여전히 이 form이 표시되고 있다. 
+우리가 바라는 것은 이게 아님. 그래도 적어도 이제는 유저명은 기억하고 있음. */
+
 
 /* function handleLinkClick(event) {
     event.preventDefault();

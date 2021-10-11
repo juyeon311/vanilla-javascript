@@ -10,12 +10,15 @@
 </head>
 
 <body>
-    <form id="login-form">
+    <form class="hidden" id="login-form">
         <input required maxlength="15" type="text" placeholder="What is your name?" />
         <input type="submit" value="Login" />
     </form>
     <h1 id="greeting" class="hidden"></h1>
-    <!-- <a href="https://nomadcoders.co">Go to courses</a> ->  -->
+    <!-- js에 있는 if구문과 상관 없이 form이 표시되기 때문에
+    form과 greeting을 모두 숨긴 채로 시작해야 할 것 같음. 
+    그래서 form에도 class="hidden"해서 class 추가함 -->
+    <!-- <a href="https://nomadcoders.co">Go to courses</a> --> -->
     <!--링크의 기본동작은 클릭 시 다른 페이지로 이동하는 것-->
     <script src="app.js"></script>
 </body>
